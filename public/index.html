@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real-Time Chat App</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="login">
+        <h2>Login</h2>
+        <input type="text" id="login-username" placeholder="Username" />
+        <input type="password" id="login-password" placeholder="Password" />
+        <button onclick="login()">Login</button>
+        <p>
+          Don't have an account?
+          <a href="#" onclick="showRegister()">Register</a>
+        </p>
+      </div>
+      <div id="register" style="display: none">
+        <h2>Register</h2>
+        <input type="text" id="register-username" placeholder="Username" />
+        <input type="password" id="register-password" placeholder="Password" />
+        <button onclick="register()">Register</button>
+        <p>
+          Already have an account? <a href="#" onclick="showLogin()">Login</a>
+        </p>
+      </div>
+      <div id="chat" style="display: none">
+        <h2>Chat Room</h2>
+        <div id="messages"></div>
+        <input type="text" id="message-input" placeholder="Type a message" />
+        <button onclick="sendMessage()">Send</button>
+        <button onclick="logout()">Logout</button>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
